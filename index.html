@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tris </title>
+</head>
+<body>
+		<!--<h1 class="titolo"></h1>-->
+		<h1>RESIDENT EVIL </h1>
+		<div class="flex">
+			<div class="leon">
+				<img class="fillImage" src="./static/images/leonbg.png"> 
+			</div>
+
+			<div class="tris">
+				<div class="row ">
+					<div class="col bordosopr bordosinistr">
+						<a href="#" class="gridBtn player1"></a>
+					</div>
+
+					<div class="col bordosopr">
+						<a href="#" class="gridBtn player1"></a>
+					</div>
+
+					<div class="col bordosopr bordodestr">
+						<a href="#" class="gridBtn player2"></a>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col bordosinistr">
+						<a href="#" class="gridBtn player1"></a>
+					</div>
+
+					<div class="col">
+						<a href="#" class="gridBtn player2"></a>
+					</div>
+
+					<div class="col bordodestr">
+						<a href="#" class="gridBtn player1"></a>
+					</div>
+				</div>
+
+				<div class="row ">
+					<div class="col bordosot bordosinistr">
+						<a href="#" class="gridBtn player2"></a>
+					</div>
+
+					<div class="col bordosot">
+						<a href="#" class="gridBtn player2"></a>
+					</div>
+
+					<div class="col bordosot bordodestr">
+						<a href="#" class="gridBtn player1"></a>
+					</div>
+				</div>
+
+				<div id="Board">
+					<div data-index="1" class="cella right-border bottom-border"></div>
+					<div data-index="2" class="cella right-border bottom-border"></div>
+					<div data-index="3" class="cella bottom-border"></div>
+					<div data-index="4" class="cella right-border bottom-border"></div>
+					<div data-index="5" class="cella right-border bottom-border"></div>
+					<div data-index="6" class="cella bottom-border"></div>
+					<div data-index="7" class="cella right-border"></div>
+					<div data-index="8" class="cella right-border"></div>
+					<div data-index="9" class="cella"></div>
+					<div id="strike" class="strike strike-diag-2"></div>
+				</div>
+			</div>
+			<div class="hunk">
+					<img class="fillImage" src="./static/images/hunkbg.png"> <h2 class="Opunt">punteggio: <span></span></h2> 
+				</div>
+
+			<div class="button flex">
+				<button id="Button" onclick="ClickButton()">VAI</button>
+			</div>
+		</div>
+		<div id="partitapersa-box">
+				<h2 id="partitapersa-Testo">Vittoria X</h2>
+					<button id="PlayBtn">Ricomincia</button>
+		</div>
+	</div>
+</body>
+</html>
