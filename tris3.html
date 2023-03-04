@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tris </title>
+
+<!--CSS-->
+	<style type="text/css">
+		*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #000;
+    }
+
+body{
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+
+#Board{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    cursor: pointer;
+    position: relative; 
+}
+
+h1{
+    color: red;
+    font-size: 36px;
+}
+
+.right-border {
+    border-right: 0.2em solid indigo;
+}
+
+.bottom-border {
+    border-bottom: 0.2em solid indigo;
+}
+.cella{
+    color: blue;
+    font-size: 2em;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+strike{
+    position: absolute;
+    background-color: blueviolet;
+}
+
+.strike-row-1{ 
+    width: 100%;
+    height: 4px;
+    top: 15%;
+}
+
+.strike-row-2{ 
+    width: 100%;
+    height: 4px;
+    top: 48%;
+}
+
+.strike-row-3{ 
+    width: 100%;
+    height: 4px;
+    top: 83%;
+}
+.strike-col-1{ 
+    height: 100%;
+    width: 4px;
+    left: 15%;
+}
+
+.strike-col-2{ 
+    height: 100%;
+    width: 4px;
+    left: 48%;
+}
+
+.strike-col-3{ 
+    height: 100%;
+    width: 4px;
+    left: 83%;
+}
+
+.strike-diag-1{
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 5%;
+    transform: skewY(45deg);
+}
+
+.strike-diag-2{
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 5%;
+    transform: skewY(-45deg);
+}
+
+#partitapersa-box{
+    text-align: center;
+    border: 8px solid indigo;
+    width: 40%;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+#partitapersa-Testo{
+    color: blueviolet;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+#PlayBtn{
+    background-color: blueviolet;
+    color: white;
+    cursor: pointer;
+    border: 1px solid green;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.leon{
+    width: 200px;
+    height: 200px;
+    margin-top: 120px;
+}
+
+.fillImage{
+    width: 100%;
+    height: 100%;
+}
+
+.hunk{
+    width: 200px;
+    height: 200px;
+    margin-top: 120px;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+	</style>
+</head>
+<!--HTML-->
+<body>
+	<div class="" >
+		<!--<h1 class="titolo"></h1>-->
+		<h1>RESIDENT EVIL </h1>
+		<div class="flex">
+			<div class="leon">
+				<img class="fillImage" src="./static/images/leonbg.png"> 
+			</div>
+
+			<div class="tris">
+				<div class="row ">
+					<div class="col bordosopr bordosinistr">
+						<a href="#" class="gridBtn player1"></a>
+					</div>
+
+					<div class="col bordosopr">
+						<a href="#" class="gridBtn player1"></a>
+					</div>
+
+					<div class="col bordosopr bordodestr">
+						<a href="#" class="gridBtn player2"></a>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col bordosinistr">
+						<a href="#" class="gridBtn player1"></a>
+					</div>
+
+					<div class="col">
+						<a href="#" class="gridBtn player2"></a>
+					</div>
+
+					<div class="col bordodestr">
+						<a href="#" class="gridBtn player1"></a>
+					</div>
+				</div>
+
+				<div class="row ">
+					<div class="col bordosot bordosinistr">
+						<a href="#" class="gridBtn player2"></a>
+					</div>
+
+					<div class="col bordosot">
+						<a href="#" class="gridBtn player2"></a>
+					</div>
+
+					<div class="col bordosot bordodestr">
+						<a href="#" class="gridBtn player1"></a>
+					</div>
+				</div>
+
+				<div id="Board">
+					<div data-index="1" class="cella right-border bottom-border"></div>
+					<div data-index="2" class="cella right-border bottom-border"></div>
+					<div data-index="3" class="cella bottom-border"></div>
+					<div data-index="4" class="cella right-border bottom-border"></div>
+					<div data-index="5" class="cella right-border bottom-border"></div>
+					<div data-index="6" class="cella bottom-border"></div>
+					<div data-index="7" class="cella right-border"></div>
+					<div data-index="8" class="cella right-border"></div>
+					<div data-index="9" class="cella"></div>
+					<div id="strike" class="strike strike-diag-2"></div>
+				</div>
+			</div>
+			<div class="hunk">
+					<img class="fillImage" src="./static/images/hunkbg.png"> <h2 class="Opunt">punteggio: <span></span></h2> 
+				</div>
+
+			<div class="button flex">
+				<button id="Button" onclick="ClickButton()">VAI</button>
+			</div>
+		</div>
+		<div id="partitapersa-box">
+				<h2 id="partitapersa-Testo">Vittoria X</h2>
+					<button id="PlayBtn">Ricomincia</button>
+		</div>
+	</div>
+
+
+<!--JS-->
+	<script type="text/javascript" src="static/JS/tris.js">
+		let links = document.querySelectorAll(".gridBtn"),
+			currentPlayer = 1,
+    cellIsOccupied = true
+
+
+		for(let i = 0; i < links.length; i++){
+			let link = links[i]
+			link.addEventListener("click", function(e){
+				e.preventDefault()
+
+        cellIsOccupied = e.currentTarget.classList.contains("player2") || e.currentTarget.classList.contains("player1")	;			
+
+        console.log(cellIsOccupied)
+				if(!cellIsOccupied){
+
+        e.currentTarget.classList.toggle("player1")
+        }
+			})
+		}
+	</script>
+</body>
+</html>
